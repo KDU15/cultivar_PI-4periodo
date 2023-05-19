@@ -1,0 +1,7 @@
+{
+  "name": "cultivar_pi",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
