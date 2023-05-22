@@ -1,1 +1,38 @@
+ion-tab-bar{
+    background: #033325;
+    border-radius: 15px;
+    margin: 0 10px 10px 10px;
+    height: 65px;
+    justify-content: space-around;
 
+    ion-tab-button{
+        background: none;
+        color: #fff;
+        height: 50px;
+        width: 50px;
+        max-width: 50px;
+        border-radius: 100%;
+        opacity: .6;
+
+        ion-icon{
+            font-size: 2.5em;
+        }
+
+        &.tab-selected{
+            background: #298729;
+            opacity: 1;
+        }
+    }
+}
+
+.tab-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 10%; /* Ajuste a largura do fundo circular conforme necessário */
+    height: 100%;
+    background-color: #ff0000; /* Ajuste a cor do fundo circular conforme necessário */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave ao movimento */
+    z-index: -1; /* Coloca o fundo circular atrás da barra de tabs */
+    border-radius: 50%; /* Cria um formato circular para o fundo */
+  }

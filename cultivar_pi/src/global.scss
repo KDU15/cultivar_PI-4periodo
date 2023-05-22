@@ -9,6 +9,13 @@
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$font-family-base: "Poppins", sans-serif !default;
+
+*{
+    font-family: 'Poppins', 'sans-serif';
+}
+
 /* Core CSS required for Ionic components to work properly */
 @import "@ionic/angular/css/core.css";
 
@@ -24,3 +31,49 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@import 'animate.css';
+
+  
+ion-loading.loading-class {
+	--background: #00521A;
+	--spinner-color: #ffffff;
+  
+	color: #ffffff;
+}
+
+.loading-wrapper{
+    border-radius: 0px !important;
+}
+
+.loading-class {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	--max-height: 100vh;
+	--height: 100vh;
+	
+	--max-width: 100vw;
+	--width: 100vw;
+
+    &::after {
+        content: "";
+        background-image: url(assets/logos/logo-b.png);
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        z-index: 999;
+    }
+
+}
+
+.tabs-inner{
+    margin-bottom: -76px;
+}

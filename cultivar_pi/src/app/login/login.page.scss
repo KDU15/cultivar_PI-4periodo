@@ -1,0 +1,61 @@
+ion-content{
+    --background: #F4FFFC;
+
+    &::part(scroll){
+        overflow-y: hidden;
+    }
+
+    .campo-logo{
+        margin: 80px auto;
+        display: flex;
+        justify-content: center;
+        
+        img{
+            width: 40%;
+        }
+    }
+
+    .campo-inputs{
+        ion-label{
+            margin-left: 45px;
+            font-size: .7em;
+            font-weight: 700;
+            opacity: .8;
+        }
+        ion-input{
+            border: 1px solid #298729;
+            border-radius: 5px;
+            margin: 0 30px;      
+            width: unset;
+            margin-bottom: .8em;
+            --padding-start: 10px;
+            background: #29872921;
+        }
+        ion-button{
+            margin: 60px 30px;
+            border-radius: 10px;
+            width: -webkit-fill-available;
+
+            &::part(native){
+                height: 90%;
+                border-radius: 5px;
+            }
+            span{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    .footer{
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+
+        img{
+            width: 100%;
+        }
+    }
+}

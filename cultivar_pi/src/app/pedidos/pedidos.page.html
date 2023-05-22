@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <img src="assets/icons/pedidos.svg" alt="">
+    <h1>LISTA DE PEDIDOS</h1>
+  </div>
+  <div class="campo-pedidos">
+    <div routerLink="detalhes-pedido" *ngFor="let pedido of pedidos" class="pedido">
+      <div class="id">
+        <div class="status"></div>
+        <div class="det">
+          <span class="num-pedido">
+            #23213213
+          </span>
+          <span class="dat-pedido">
+            15/07/2002
+          </span>
+        </div>
+      </div>
+      <div class="valor">
+        R$ 12,00
+      </div>
+    </div>
+  </div>
+</ion-content>

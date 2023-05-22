@@ -1,0 +1,110 @@
+ion-content{
+    &::part(scroll){
+        overflow-y: hidden;
+    }
+    
+    .background{
+        width: 100%;
+        height: 100%;
+        background-image: url(../../assets/imgs-back/intro.png);
+        animation: background 1.5s linear forwards;
+
+        .content{
+            width: 100%;
+            height: 100%;
+            animation: blur .5s linear 1.6s forwards;
+
+            .logo{
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                padding: 80px 0;
+                opacity: 0;
+                position: relative;
+                animation: content .6s linear 1.5s forwards;
+
+                img{
+                    width: 45%;
+                }
+            }
+
+            .campo-interacao{
+                display: flex;
+                opacity: 0;
+                position: relative;
+                flex-direction: column;
+                background: #F4FFFC;
+                border-radius: 20px 0 0 20px;
+                margin-left: 40px;
+                box-shadow: 0px 2px 13px -4px #0000006b;
+                padding: 30px 20px;
+                gap: 20px;
+                color: #0C6351;
+                animation: content .6s linear 1.5s forwards;
+
+                // &::after{
+                //     content: '';
+                //     position: absolute;
+                //     bottom: -20px;
+                //     left: 20px;
+                //     top: 0;
+                //     right: 0;
+                //     background: #C6FFEF;
+                //     border-radius: 20px 0 0 20px;
+                //     z-index: -1;
+                // }
+
+                h1{
+                    margin: 0;
+                }
+
+                .interacao{
+                    ion-button{
+                        font-size: .8em;
+                        width: 100%;
+                        height: 55px;
+                        
+                        &::part(native){
+                            border-radius: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes background {
+        0%{
+            background-position-x: left;
+        }
+        75%{
+            background-position-x: right;
+        }
+        100%{
+            background-position-x: right;
+        }
+    }
+
+    @keyframes content {
+        from {
+            opacity: 1;
+            transform: translate3d(100%, 0, 0);
+            visibility: visible;
+        }
+      
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    @keyframes blur {
+        from {
+        }
+      
+        to {
+            background: #00000011;
+            backdrop-filter: blur(3px);
+        }
+    }
+}

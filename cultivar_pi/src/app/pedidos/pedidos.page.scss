@@ -1,0 +1,69 @@
+ion-content{
+    --background: #F4FFFC;
+
+    &::part(scroll){
+        display: flex;
+        flex-direction: column;
+        overflow-y: hidden;
+    }
+
+    .header{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #0C6351;
+        font-weight: 500;
+        margin: 20px 10px;       
+        
+        h1{
+            font-size: 1.4em;
+            margin: 0;
+        }
+    }
+
+    .campo-pedidos{
+        display: flex;
+        flex-direction: column;
+        margin: 0 10px;
+        gap: 10px;
+        height: 100%;
+        overflow-y: auto;
+        padding-bottom: 110px;
+
+        .pedido{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            color: #0C6351;
+            background: #fff;
+            box-shadow: 0px 0px 13px -5px #0000006b;
+            border-radius: 10px;
+
+            .id{
+                display: flex;
+                gap: 10px;
+
+                .status{
+                    width: 3px;
+                    border-radius: 20px;
+                    background: #0C6351;
+                }
+
+                .det{
+                    display: flex;
+                    flex-direction: column;
+
+                    .num-pedido{
+                        font-size: 1em;
+                        font-weight: 500;
+                    }
+                    .dat-pedido{
+                        font-size: .6em;
+                    }
+                }
+            }
+
+        }
+    }
+}

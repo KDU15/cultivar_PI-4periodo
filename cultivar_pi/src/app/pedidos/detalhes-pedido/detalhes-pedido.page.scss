@@ -1,0 +1,108 @@
+ion-content{
+    --background: #F4FFFC;
+
+    .header{
+        display: flex;
+        align-items: center;
+        padding: 20px 10px;
+        font-size: 1.5em;
+        color: #0C6351;
+
+        ion-icon{
+            font-size: 1.5em;
+        }
+    }
+
+    .items{
+        background: #fff;
+        margin: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 13px -5px #0000006b;
+        padding: 15px 20px;
+
+        .title{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+
+            font-size: .65em;
+            font-weight: 600;
+            opacity: .6;
+            color: #0C6351;
+        }
+
+        .dados{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            color: #0C6351;
+            font-size: 1.1em;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(12, 99, 82, 0.192);
+
+            &:nth-last-child(1){
+                border-bottom: unset;
+            }
+        }
+    }
+    
+    .detalhamento{
+        background: #fff;
+        margin: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 13px -5px #0000006b;
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .dado{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            font-size: .9em;
+            font-weight: 600;
+            color: #0C6351;
+
+            .title{
+                opacity: .6;
+                font-weight: 500;
+            }
+
+            .valor{
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    .fornecedores{
+        margin: 30px 20px;
+
+        h2{
+            font-size: .8em;
+            font-weight: 600;
+            color: #0C6351;
+        }
+
+        .fornecedor{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 13px -5px #0000006b;
+
+            .img{
+                display: flex;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+        }
+    }
+}
