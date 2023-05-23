@@ -32,13 +32,10 @@ $font-family-base: "Poppins", sans-serif !default;
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-@import 'animate.css';
-
-  
 ion-loading.loading-class {
 	--background: #00521A;
 	--spinner-color: #ffffff;
-  
+
 	color: #ffffff;
 }
 
@@ -54,7 +51,7 @@ ion-loading.loading-class {
 
 	--max-height: 100vh;
 	--height: 100vh;
-	
+
 	--max-width: 100vw;
 	--width: 100vw;
 
