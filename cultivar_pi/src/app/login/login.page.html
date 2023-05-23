@@ -2,22 +2,24 @@
   <div class="campo-logo">
     <img src="assets/logos/logo-n.png" alt="">
   </div>
-  <div class="campo-inputs">
-    <ion-label>
-      Login
-    </ion-label>
-    <ion-input type="text"></ion-input>
-    <ion-label>
-      Senha
-    </ion-label>
-    <ion-input type="password"></ion-input>
-    <ion-button (click)="entrar()">
-      <span>
-        ENTRAR
-        <ion-icon name="arrow-forward-outline"></ion-icon>
-      </span>
-    </ion-button>
-  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="entrar()">
+    <div class="campo-inputs">
+      <ion-label>
+        Login
+      </ion-label>
+      <ion-input formControlName="login" type="text"></ion-input>
+      <ion-label>
+        Senha
+      </ion-label>
+      <ion-input formControlName="password" type="password"></ion-input>
+      <ion-button [disabled]="loginForm.invalid" type="ngSubmit">
+        <span>
+          ENTRAR
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </span>
+      </ion-button>
+    </div>
+  </form>
   <div class="footer">
     <img src="assets/imgs-back/campo.png" alt="">
   </div>
