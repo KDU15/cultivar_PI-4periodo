@@ -16,15 +16,89 @@ ion-content{
     }
 
 
-    .detalhamento{
+    .items{
         background: #fff;
         margin: 10px;
         border-radius: 12px;
         box-shadow: 0px 0px 13px -5px #0000006b;
-        padding: 15px 20px;
+        padding: 0 20px;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
+        max-height: 50%;
+        overflow-y: auto;
+
+        .produto{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #29872952;
+            padding: 20px 0;
+
+            &:nth-last-child(1){
+                border-bottom: 0;
+            }
+
+            .img-qtd{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                
+                .img{
+                    display: flex;
+                    overflow: hidden;
+                    border-radius: 10px;
+                }
+    
+                .nom-qtd{
+                    gap: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    color: #0C6351;
+
+                    .qtd{
+                        display: flex;
+                        gap: 10px;
+                        background: #C7E3C7;
+                        padding: 2px 8px;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            .campo-valor{
+                color: #0C6351;
+                text-align: center;
+                .title{
+                    font-weight: 600;
+                    font-size: .6em;
+                }
+                .valor{
+                    font-weight: 600;
+                }
+            }
+
+            .delete{
+                .botao{
+                    display: flex;
+                }
+            }
+        }
+    }
+
+
+    .detalhamento{
+        background: #fff;
+        margin: 10px;
+        margin-top: 30px;
+        border-radius: 12px;
+        box-shadow: 0px 0px 13px -5px #0000006b;
+        padding: 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
 
         .dado{
             display: flex;
@@ -53,7 +127,6 @@ ion-content{
         width: -webkit-fill-available;
 
         &::part(native){
-            height: 90%;
             border-radius: 5px;
         }
         span{
