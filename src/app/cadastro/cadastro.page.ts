@@ -16,6 +16,9 @@ export class CadastroPage implements OnInit {
   neighborhood!: string;
   street: any;
 
+  olhoMagico: boolean = false;
+  olhoMagIcon: string = 'eye-off-outline';
+
   constructor(
     private router: Router,
     private http: HttpClient) { }
@@ -50,13 +53,28 @@ export class CadastroPage implements OnInit {
           this.street = data.street;
           console.log(data)
       
-        }, (error: any) => { console.log('fudeu', error) })
+        }, (error: any) => {
+          if(error.error.message == 'Todos os serviços de CEP retornaram erro.'){
+            
+          }
+        })
     }
   }
 
   consultaCep(cep: any) {
     return this.http.get(`https://brasilapi.com.br/api/cep/v1/${cep}`);
   };
+
+  tPassword(){
+    if(this.olhoMagico == false){
+      this.olhoMagico = true;
+      this.olhoMagIcon = 'eye-outline';
+    }
+    else{
+      this.olhoMagico = false;
+      this.olhoMagIcon = 'eye-off-outline';
+    }
+  }
 
   finalizar(){
     this.router.navigateByUrl('/login')

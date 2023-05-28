@@ -1,7 +1,20 @@
 ion-content{
+
+    .voltar{
+        display: flex;
+        align-items: center;
+        ion-icon{
+            color: #298729;
+            font-size: 2em;
+            margin: 20px;
+            margin-right: 5px;
+        }
+    }
+
     .header{
         display: flex;
         margin: 40px 20px;
+        margin-top: 0;
         align-items: center;
         gap: 10px;
         color: #0C6351;
@@ -10,9 +23,9 @@ ion-content{
             display: flex;
             background: #0C6351;
             border-radius: 20px;
-            width: 151px;
+            width: 133px;
             height: 78px;
-            padding: 10px;
+            padding: 20px;
         }
 
         h1{
@@ -36,14 +49,22 @@ ion-content{
             opacity: .8;
         }
         ion-input{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
             border: 1px solid #298729;
             border-radius: 5px;
             margin: 0 20px;      
             width: unset;
-            min-height: 46px;
             margin-bottom: .8em;
             --padding-start: 10px;
             background: #29872921;
+
+            ion-icon{
+                font-size: 1.8em;
+                padding: 0 10px;
+                color: #298729;
+            }
         }
         ion-button{
             margin: 45px 20px;
@@ -63,6 +84,25 @@ ion-content{
 
         .cep-state{
             display: flex;
+        }
+
+        .campo-ind{
+            border: 1.2px solid #0C6351;
+            margin: 20px;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: justify;
+            color: #0C6351;
+            p{
+                margin: 0;
+                font-size: .9em;
+                font-weight: 500;
+            }
+            ion-toggle{
+                margin-top: 10px;
+                width: 100%;
+                font-weight: 500;
+            }
         }
     }
 }

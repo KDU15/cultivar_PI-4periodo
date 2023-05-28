@@ -1,6 +1,7 @@
 <ion-content [fullscreen]="true">
   <div class="voltar">
-    <ion-icon routerLink="/introducao" name="chevron-back-outline"></ion-icon>
+    <ion-icon routerLink="/introducao" name="arrow-back-outline"></ion-icon>
+    Voltar
   </div>
   <div class="campo-logo">
     <img src="assets/logos/logo-n.png" alt="">
@@ -14,7 +15,7 @@
       <ion-label>
         Senha
       </ion-label>
-      <ion-input formControlName="password" type="password"></ion-input>
+      <ion-input formControlName="password" [type]="olhoMagico ? 'text' : 'password'"><ion-icon (click)="tPassword()" slot="end" [name]="olhoMagIcon"></ion-icon></ion-input>
       <ion-button [disabled]="loginForm.invalid" type="ngSubmit">
         <span>
           ENTRAR

@@ -57,6 +57,11 @@ ion-content{
             gap: 10px;
             overflow-y: auto;
             margin-top: 14px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
             .botao{
                 background: #0C6351;
                 border-radius: 12px;
@@ -107,6 +112,47 @@ ion-content{
         }
     }
 
+    .prod-categotia{
+        margin: 30px 10px;
+
+        .categorias{
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            gap: 10px;
+
+            .categoria{
+                display: flex;
+                justify-content: space-between;
+                width: 50%;
+                
+                background: #0C6351;
+                padding: 15px 10px;
+                border-radius: 12px;
+                box-shadow: 0px 0px 13px -5px #0000006b;
+
+                font-size: .8em;
+                font-weight: 600;
+                color: #fff;
+                
+                .icon{
+                    display: flex;
+                    border-radius: 10px;
+                    overflow: hidden;
+
+                    img{
+                        width: 35px;
+                        height: 35px;
+                    }
+                }
+
+                span{
+                    font-size: .8em;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
     
     .mais-prox{
         margin: 30px 10px;
@@ -117,6 +163,10 @@ ion-content{
             justify-content: space-between;
             padding: 5px;
             gap: 10px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
             
             .vendedor{
                 display: flex;
@@ -149,6 +199,10 @@ ion-content{
             display: flex;
             overflow-y: auto;
             gap: 20px;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
 
             .produto{
                 display: flex;

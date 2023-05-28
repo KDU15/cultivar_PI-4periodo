@@ -1,0 +1,106 @@
+<ion-content [fullscreen]="true">
+  <div routerLink="/tabs/home" class="voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Voltar
+  </div>
+  <div class="header">
+    <div class="icon">
+      <img src="assets/icons/editar.svg" alt="">
+    </div>
+    <div class="desc">
+      <h1>Cadastro de produto</h1>
+      <h2>Cadastre abaixo o seu produto, insira as informações e aumente a visibilidade do seu produto na nossa plataforma.</h2>
+    </div>
+  </div>
+
+  <form action="">
+
+    <ion-label>
+      Nome do produto
+    </ion-label>
+    <ion-input placeholder="EX.: Banana da terra" type="text"></ion-input>
+
+    <ion-label>
+      Preço por und.
+    </ion-label>
+    <ion-input placeholder="EX.: Banana da terra" type="text"></ion-input>
+
+    <ion-label>
+      Preço por kg
+    </ion-label>
+    <ion-input placeholder="EX.: Banana da terra" type="text"></ion-input>
+
+    <div class="prod-categotia">
+      <ion-label>
+        Categoria do produto
+      </ion-label>
+      <div class="categorias">
+        <div id="grao" (click)="setCategoria('grao')" [ngClass]="categoria == 'grao' ? 'select' : ''" class="categoria">
+          <div class="icon">
+            <img src="assets/icons/graos.svg" alt="">
+          </div>
+          <span>
+            GRÃOS
+          </span>
+        </div>
+        <div id="legumes" (click)="setCategoria('legumes')" [ngClass]="categoria == 'legumes' ? 'select' : ''" class="categoria">
+          <div class="icon">
+            <img src="assets/icons/legumes.svg" alt="">
+          </div>
+          <span>
+            LEGUMES
+          </span>
+        </div>
+        <div id="frutas" (click)="setCategoria('frutas')" [ngClass]="categoria == 'frutas' ? 'select' : ''" class="categoria">
+          <div class="icon">
+            <img src="assets/icons/frutas.svg" alt="">
+          </div>
+          <span>
+            FRUTAS
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <ion-label>
+      Descrição
+    </ion-label>
+    <ion-textarea placeholder="EX.: Banana da terra, selecionadas, sem uso de agrotóxicos..."></ion-textarea>
+
+    <ion-label>
+      Data de colheita
+    </ion-label>
+    <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+    <ion-label>
+      Data de expiração
+    </ion-label>
+    <ion-datetime-button datetime="datetime2"></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="datetime"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime mode="ios" id="datetime2"></ion-datetime>
+      </ng-template>
+    </ion-modal>
+
+    <div class="status">
+      <ion-toggle>Produto ativo ou inativo:</ion-toggle>
+    </div>
+
+    <ion-button>
+      <span>
+        CADASTRAR
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </span>
+    </ion-button>
+
+  </form>
+
+  
+</ion-content>

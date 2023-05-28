@@ -11,6 +11,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
+  olhoMagico: boolean = false;
+  olhoMagIcon: string = 'eye-off-outline';
+
   constructor(
     private load: LoadingService,
     private router: Router,
@@ -19,16 +22,23 @@ export class LoginPage implements OnInit {
     loginForm = new FormGroup({
       login: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
-     
     });
 
   ngOnInit() {
+  }
 
-    
+  tPassword(){
+    if(this.olhoMagico == false){
+      this.olhoMagico = true;
+      this.olhoMagIcon = 'eye-outline';
+    }
+    else{
+      this.olhoMagico = false;
+      this.olhoMagIcon = 'eye-off-outline';
+    }
   }
 
   entrar(){
-
 
     this.auth.loginRequest(this.loginForm.value.login!, this.loginForm.value.password!).subscribe((data: any) =>{
 

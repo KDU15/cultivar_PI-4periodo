@@ -1,4 +1,8 @@
 <ion-content [fullscreen]="true">
+  <div routerLink="/introducao" class="voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Voltar
+  </div>
   <div class="header">
     <div class="icon">
       <img src="assets/icons/editar.svg" alt="">
@@ -15,14 +19,17 @@
       Nome completo
     </ion-label>
     <ion-input placeholder="EX.: Cesar Valença da Silva" formControlName="name" type="text"></ion-input>
+    
     <ion-label>
       CPF
     </ion-label>
     <ion-input placeholder="EX.: 000.000.000-00" formControlName="cpf" type="text"></ion-input>
+
     <ion-label>
       Email
     </ion-label>
     <ion-input placeholder="EX.: seuendereco@dominio.ex" formControlName="email" type="text"></ion-input>
+
     <ion-label>
       Telefone
     </ion-label>
@@ -48,18 +55,28 @@
       Cidade
     </ion-label>
     <ion-input placeholder="EX.: Recife" [(ngModel)]="city" formControlName="city" type="text"></ion-input>
+
     <ion-label>
       Bairro
     </ion-label>
     <ion-input placeholder="EX.: Casa Forte" [(ngModel)]="neighborhood" formControlName="neighborhood" type="text"></ion-input>
+
     <ion-label>
       Endereço
     </ion-label>
     <ion-input placeholder="EX.: Rua Sei Lá O Que" [(ngModel)]="street" formControlName="street" type="text"></ion-input>
+
+    <div class="campo-ind">
+      <p>
+        Em nosso aplicativo Cultivar, você pode comprar ou anunciar seus produtos agrícolas. Escolha seu tipo de cadastro: cliente ou agricultor.
+      </p>
+      <ion-toggle>Cadatrar-se como Agricultor</ion-toggle>
+    </div>
+
     <ion-label>
       Senha
     </ion-label>
-    <ion-input formControlName="password" type="text"></ion-input>
+    <ion-input formControlName="password" [type]="olhoMagico ? 'text' : 'password'"><ion-icon (click)="tPassword()" slot="end" [name]="olhoMagIcon"></ion-icon></ion-input>
 
     <ion-button [disabled]="cadForm.invalid" type="ngSubmit">
       <span>

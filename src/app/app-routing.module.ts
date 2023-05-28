@@ -37,7 +37,12 @@ const routes: Routes = [
   {
     path: 'cadastro',
     loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },  {
+    path: 'cadastro-produto',
+    loadChildren: () => import('./agricultor-fluxo/cadastro-produto/cadastro-produto.module').then( m => m.CadastroProdutoPageModule)
   },
+
+
 ];
 @NgModule({
   imports: [
