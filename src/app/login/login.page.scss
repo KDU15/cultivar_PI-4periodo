@@ -5,8 +5,16 @@ ion-content{
         overflow-y: hidden;
     }
 
+    .voltar{
+        ion-icon{
+            color: #298729;
+            font-size: 3em;
+            margin: 20px;
+        }
+    }
+
     .campo-logo{
-        margin: 80px auto;
+        margin: 40px auto 80px auto;
         display: flex;
         justify-content: center;
         
@@ -38,6 +46,7 @@ ion-content{
 
             &::part(native){
                 border-radius: 5px;
+                height: 55px;
             }
             span{
                 width: 100%;
