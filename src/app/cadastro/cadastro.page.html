@@ -1,13 +1,71 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cadastro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="header">
+    <div class="icon">
+      <img src="assets/icons/editar.svg" alt="">
+    </div>
+    <div class="desc">
+      <h1>Cadastro</h1>
+      <h2>Bem-vindo(a)! Crie sua conta de usuário preenchendo os campos abaixo com as suas informações.</h2>
+    </div>
+  </div>
+
+  <form [formGroup]="cadForm" (ngSubmit)="finalizar()">
+
+    <ion-label>
+      Nome completo
+    </ion-label>
+    <ion-input placeholder="EX.: Cesar Valença da Silva" formControlName="name" type="text"></ion-input>
+    <ion-label>
+      CPF
+    </ion-label>
+    <ion-input placeholder="EX.: 000.000.000-00" formControlName="cpf" type="text"></ion-input>
+    <ion-label>
+      Email
+    </ion-label>
+    <ion-input placeholder="EX.: seuendereco@dominio.ex" formControlName="email" type="text"></ion-input>
+    <ion-label>
+      Telefone
+    </ion-label>
+    <ion-input placeholder="EX.: (81) 90000-0000" formControlName="phone" type="text"></ion-input>
+
+    <div class="cep-state">
+      <div class="cep">
+        <ion-label>
+          CEP
+        </ion-label>
+        <ion-input placeholder="EX.: 00000-000" (ionChange)="consulta($event)" [(ngModel)]="cep" formControlName="cep" type="text"></ion-input>
+      </div>
+
+      <div class="uf">
+        <ion-label>
+          UF
+        </ion-label>
+        <ion-input placeholder="EX.: PE" [(ngModel)]="state" formControlName="state" type="text"></ion-input>
+      </div>
+    </div>
+
+    <ion-label>
+      Cidade
+    </ion-label>
+    <ion-input placeholder="EX.: Recife" [(ngModel)]="city" formControlName="city" type="text"></ion-input>
+    <ion-label>
+      Bairro
+    </ion-label>
+    <ion-input placeholder="EX.: Casa Forte" [(ngModel)]="neighborhood" formControlName="neighborhood" type="text"></ion-input>
+    <ion-label>
+      Endereço
+    </ion-label>
+    <ion-input placeholder="EX.: Rua Sei Lá O Que" [(ngModel)]="street" formControlName="street" type="text"></ion-input>
+    <ion-label>
+      Senha
+    </ion-label>
+    <ion-input formControlName="password" type="text"></ion-input>
+
+    <ion-button [disabled]="cadForm.invalid" type="ngSubmit">
+      <span>
+        ENTRAR
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+      </span>
+    </ion-button>
+  </form>
 </ion-content>
