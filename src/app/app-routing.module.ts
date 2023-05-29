@@ -45,6 +45,10 @@ const routes: Routes = [
     path: 'editar-produto',
     loadChildren: () => import('./agricultor-fluxo/editar-produto/editar-produto.module').then( m => m.EditarProdutoPageModule)
   },
+  {
+    path: 'gerar-venda',
+    loadChildren: () => import('./agricultor-fluxo/gerar-venda/gerar-venda.module').then( m => m.GerarVendaPageModule)
+  },
 
 
 ];
