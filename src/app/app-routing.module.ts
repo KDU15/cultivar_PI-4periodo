@@ -41,6 +41,10 @@ const routes: Routes = [
     path: 'cadastro-produto',
     loadChildren: () => import('./agricultor-fluxo/cadastro-produto/cadastro-produto.module').then( m => m.CadastroProdutoPageModule)
   },
+  {
+    path: 'editar-produto',
+    loadChildren: () => import('./agricultor-fluxo/editar-produto/editar-produto.module').then( m => m.EditarProdutoPageModule)
+  },
 
 
 ];

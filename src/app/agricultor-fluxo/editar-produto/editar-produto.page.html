@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+  <div routerLink="/tabs/home" class="voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Voltar
+  </div>
+  <div class="header">
+    <div class="icon">
+      <img src="assets/icons/editar.svg" alt="">
+    </div>
+    <div class="desc">
+      <h1>Edição de produto</h1>
+      <h2>Selecione um dos seus produtos abaixo, edite informações e desative-os.</h2>
+    </div>
+  </div>
+
+  <div class="produtos">
+    <div class="produto">
+      <div routerLink="/editar-produto/edicao" class="info">
+        <div class="img">
+          <div class="status"></div>
+          <img src="assets/imgs-back/produto.png" alt="">
+        </div>
+        <div class="val-nom">
+          <div class="nome">Tomate</div>
+          <div class="valores">
+            <div class="valor">
+              <span>und.</span>
+              R$ 20,00
+            </div>
+            |
+            <div class="valor">
+              <span>kg</span>
+              R$ 20,00
+            </div>
+          </div>
+        </div>
+      </div>
+      <ion-toggle></ion-toggle>
+    </div>
+  </div>
+</ion-content>

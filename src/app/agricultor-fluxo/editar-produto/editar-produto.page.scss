@@ -1,0 +1,100 @@
+ion-content{
+    .voltar{
+        display: flex;
+        align-items: center;
+        ion-icon{
+            color: #298729;
+            font-size: 2em;
+            margin: 20px;
+            margin-right: 5px;
+        }
+    }
+
+    .header{
+        display: flex;
+        margin: 20px;
+        margin-top: 0;
+        align-items: center;
+        gap: 10px;
+        color: #0C6351;
+
+        .icon{
+            display: flex;
+            background: #0C6351;
+            border-radius: 20px;
+            width: 103px;
+            height: 78px;
+            padding: 20px;
+        }
+
+        h1{
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 0;
+        }
+        h2{
+            font-size: .8em;
+            font-weight: 400;
+            margin: 0;
+            margin-top: 5px;
+        }
+    }
+
+    .produtos{
+        margin: 30px 20px;
+
+        .produto{
+            background: #C7E3C7;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border-radius: 15px;
+
+            .info{
+                display: flex;
+                gap: 10px;
+                
+                .img{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        border-radius: 10px;
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    .status{
+                        background: #298729;
+                        width: 4px;
+                        height: 100%;
+                        border-radius: 20px;
+                    }
+                }
+
+                .val-nom{
+                    .nome{
+                        font-size: 1.2em;
+                    }
+                    .valores{
+                        display: flex;
+                        gap: 10px;
+                        .valor{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            font-size: .9em;
+
+                            span{
+                                font-size: .8em;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

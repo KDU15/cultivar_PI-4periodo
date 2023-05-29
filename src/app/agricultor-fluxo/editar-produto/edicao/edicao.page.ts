@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-cadastro-produto',
-  templateUrl: './cadastro-produto.page.html',
-  styleUrls: ['./cadastro-produto.page.scss'],
+  selector: 'app-edicao',
+  templateUrl: './edicao.page.html',
+  styleUrls: ['./edicao.page.scss'],
 })
-export class CadastroProdutoPage implements OnInit {
+export class EdicaoPage implements OnInit {
 
   categoria: any;
 
@@ -17,5 +17,4 @@ export class CadastroProdutoPage implements OnInit {
   setCategoria(id: any){
     this.categoria = id;
   }
-
 }
