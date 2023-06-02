@@ -3,6 +3,9 @@ ion-content{
 
     .header{
         display: flex;
+        position: fixed;
+        z-index: 1;
+        width: -webkit-fill-available;
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;    

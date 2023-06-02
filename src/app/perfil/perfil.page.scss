@@ -1,0 +1,32 @@
+ion-content{
+    --background: #F4FFFC;
+
+    .menu{
+        display: flex;
+        
+        .op{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 10px 20px;
+            margin-top: 30px;
+
+            .d{
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                font-size: 1.4em;
+
+                ion-icon{
+                    font-size: 1.2em;
+                }
+            }
+
+            .seta{
+                font-size: 1em;
+            }
+        }
+    }
+}
