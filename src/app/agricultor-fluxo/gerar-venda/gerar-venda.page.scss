@@ -1,0 +1,142 @@
+ion-content{
+
+    &::part(scroll){
+        display: flex;
+        flex-direction: column;
+    }
+
+    .voltar{
+        display: flex;
+        align-items: center;
+        ion-icon{
+            color: #298729;
+            font-size: 2em;
+            margin: 20px;
+            margin-right: 5px;
+        }
+    }
+
+    .header{
+        display: flex;
+        margin: 20px;
+        margin-top: 0;
+        align-items: center;
+        gap: 10px;
+        color: #0C6351;
+
+        .icon{
+            display: flex;
+            background: #0C6351;
+            border-radius: 20px;
+            width: 138px;
+            height: 78px;
+            padding: 20px;
+        }
+
+        h1{
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 0;
+        }
+        h2{
+            font-size: .8em;
+            font-weight: 400;
+            margin: 0;
+            margin-top: 5px;
+        }
+    }
+
+    ion-item{
+        --padding-start: 0px;
+        --inner-padding-end: 0px;
+        --inner-border-width: 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .produtos{
+        margin: 25px 20px;
+        margin-top: 15px;
+        height: 100%;
+        overflow-y: auto;
+
+        .ativo{
+            background: #0c6352 !important;
+            img{
+                border: 1px solid #fff;
+            }
+            
+            .val-nom{
+                color: #ffffff !important;
+            }
+        }
+
+        .produto{
+            width: 100%;
+            background: #0c635233;
+            border: 1px solid #0C6351;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border-radius: 15px;
+
+            .info{
+                display: flex;
+                gap: 10px;
+                
+                .img{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    img{
+                        border-radius: 10px;
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+
+                .val-nom{
+                    color: #0C6351;
+                    .nome{
+                        font-size: 1.2em;
+                    }
+                    .valores{
+                        display: flex;
+                        gap: 10px;
+                        .valor{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            font-size: .9em;
+
+                            span{
+                                font-size: .8em;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ion-button{
+        margin: 35px 20px;
+        margin-top: 0;
+        border-radius: 10px;
+        width: -webkit-fill-available;
+
+        &::part(native){
+            border-radius: 5px;
+            height: 55px;
+        }
+        span{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

@@ -1,13 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>gerar-venda</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">gerar-venda</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div routerLink="/tabs/home" class="voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Voltar
+  </div>
+  <div class="header">
+    <div class="icon">
+      <img src="assets/icons/pix-b.svg" alt="">
+    </div>
+    <div class="desc">
+      <h1>Gerar Venda</h1>
+      <h2>Selecione os produtos inserindo-os no cestinha do cliente, para gerar QR-Code de cobrança da compra.</h2>
+    </div>
+  </div>
+
+  <div class="produtos">
+    <ion-item *ngFor="let produto of arrayId">
+      <div (click)="insertCart(produto)" class="produto" [ngClass]="{'ativo': prodNoCart(produto), '': !prodNoCart(produto)}">
+        <div class="info">
+          <div class="img">
+            <img src="assets/imgs-back/produto.png" alt="">
+          </div>
+          <div class="val-nom">
+            <div class="nome">Tomate</div>
+            <div class="valores">
+              <div class="valor">
+                <span>und.</span>
+                R$ 20,00
+              </div>
+              |
+              <div class="valor">
+                <span>kg</span>
+                R$ 20,00
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </div>
+
+  <ion-button routerLink="/gerar-venda/confirmar-venda">
+    <span>
+      CONTINUAR
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </span>
+  </ion-button>
 </ion-content>

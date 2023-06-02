@@ -1,5 +1,15 @@
 ion-content{
-    --background: #F4FFFC;
+
+    .voltar{
+        display: flex;
+        align-items: center;
+        ion-icon{
+            color: #298729;
+            font-size: 2em;
+            margin: 20px;
+            margin-right: 5px;
+        }
+    }
     
     .header{
         display: flex;

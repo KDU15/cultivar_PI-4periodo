@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
-  <div class="header">
-    <img src="assets/icons/cesta.svg" alt="">
-    <h1>CESTA DE COMPRAS</h1>
+  <div routerLink="/gerar-venda" class="voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Voltar
   </div>
 
   <div class="items">
@@ -20,7 +20,32 @@
       </div>
       <div class="campo-valor">
         <div class="title">VALOR</div>
-        <span class="valor">R$ 2,00</span>
+        <span class="valor">R$ 20,00</span>
+      </div>
+
+      <div class="delete">
+        <div class="botao">
+          <img src="assets/icons/delete.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="produto">
+      <div class="img-qtd">
+        <div class="img">
+          <img src="assets/imgs-back/produto.png" alt="">
+        </div>
+        <div class="nom-qtd">
+          <span class="nome">Tomates</span>
+          <div id="open-modal" class="qtd">
+            5
+            <img src="assets/icons/edit-v.svg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="campo-valor">
+        <div class="title">VALOR</div>
+        <span class="valor">R$ 20,00</span>
       </div>
 
       <div class="delete">
@@ -34,17 +59,17 @@
   <div class="detalhamento">
     <div class="dado">
       <div class="title">QUANTIDADE TOTAL</div>
-      <div class="valor">5</div>
+      <div class="valor">2</div>
     </div>
     <div class="dado">
       <div class="title">VALOR TOTAL</div>
-      <div class="valor">R$ 10,00</div>
+      <div class="valor">R$ 12,00</div>
     </div>
   </div>
 
-  <ion-button>
+  <ion-button routerLink="/gerar-venda/confirmar-venda/qr-code-venda">
     <span>
-      FECHAR PEDIDO
+      GERAR QR-CODE
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </span>
   </ion-button>

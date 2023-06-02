@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+  <div routerLink="/gerar-venda" class="voltar">
+    <ion-icon name="arrow-back-outline"></ion-icon>
+    Voltar
+  </div>
+
+  <ion-label>
+    Nome
+  </ion-label>
+  <ion-input [(ngModel)]="nome" placeholder="EX.: Cesar Valença da Silva" type="text"></ion-input>
+  
+  <ion-label>
+    Cidade
+  </ion-label>
+  <ion-input [(ngModel)]="cidade" placeholder="EX.: Recife" type="text"></ion-input>
+
+  <ion-label>
+    Chave PIX
+  </ion-label>
+  <ion-input [(ngModel)]="chave" placeholder="E-mail, CPF/CNPJ..." type="text"></ion-input>
+
+  <h1>QR Code</h1>
+  <p>Mostre o QR code na sua tela ou envie o 'pix copie e cole', para o pagador.</p>
+
+  <div class="qr-code">
+    <canvas id="pix-qrcode"></canvas>
+  </div>
+
+  <h2>Valor pago</h2>
+  <div class="valor">R$ 10,00</div>
+  <div class="beneficiario">para <strong>Nome do Vendedor</strong></div>
+
+  <div class="cpf">
+    <span class="title">CPF</span>
+    <span class="cpf-val">***.000.000-**</span>
+  </div>
+
+  <ion-button (click)="copy()" fill="outline">
+    <span>
+      CÓPIA E COLA
+      <ion-icon name="documents-outline"></ion-icon>
+    </span>
+  </ion-button>
+  <ion-button (click)="pixGenerate()">
+    <span>
+      FINALIZAR
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </span>
+  </ion-button>
+
+</ion-content>

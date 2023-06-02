@@ -19,4 +19,19 @@ export class AuthService {
 
     return this.http.post('', {})
   }
+
+  setPix(nome: any, cidade: any, saida: any, chave: string) {
+    const pix = {
+      nome: nome,
+      cidade: cidade,
+      saida: saida,
+      chave: chave
+    }
+
+    sessionStorage.setItem('pix', JSON.stringify(pix));
+  }
+
+  getPix(){
+    return JSON.parse(sessionStorage.getItem('pix')!);
+  }
 }

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: GerarVendaPage
+  },
+  {
+    path: 'confirmar-venda',
+    loadChildren: () => import('./confirmar-venda/confirmar-venda.module').then( m => m.ConfirmarVendaPageModule)
   }
 ];
 
