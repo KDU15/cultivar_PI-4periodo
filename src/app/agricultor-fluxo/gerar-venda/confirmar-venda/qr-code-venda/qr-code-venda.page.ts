@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as QRCode from 'qrcode';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -10,36 +11,44 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class QrCodeVendaPage implements OnInit {
 
-  constructor(private http: HttpClient, private auth: AuthService) { }
+  constructor(private http: HttpClient, private auth: AuthService, private route: Router) { }
 
   codPix!: string;
 
   nome!: string;
   cidade!: string;
   chave: any;
+  valor!:string;
 
   ngOnInit() {
-    const pixKey = '712.408.424-57';
-    const amount = 100.00;
-
-    this.codPix = `PIX${pixKey}?amount=${amount}`;
-
-    QRCode.toCanvas(document.getElementById('pix-qrcode'), this.codPix, function (error) {
-      if (error) {
-        console.error(error);
-      } 
-      else {
-        console.log('QR Code de PIX gerado');
-      }
-    });
 
   }
   
   pixGenerate(){
 
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+    const params = new URLSearchParams({
+      nome: this.nome,
+      cidade: this.cidade,
+      saida: 'br',
+      chave: this.chave,
+      valor: this.valor
+    });
+    
     if(this.nome !== null && this.cidade !== null && this.chave !== null){
-      this.http.get(`https://gerarqrcodepix.com.br/api/v1?nome=Cecília Devêza&cidade=Ouro Preto&saida=qr&chave=2aa96c40-d85f-4b98-b29f-d158a1c45f7f`).subscribe((data: any) =>{
-        console.log(data)
+      this.http.get(proxyUrl + 'https://gerarqrcodepix.com.br/api/v1?' + params).subscribe((data: any) =>{
+        this.codPix = data.brcode;
+
+        QRCode.toCanvas(document.getElementById('pix-qrcode'), this.codPix, function (error) {
+          if (error) {
+            console.error(error);
+          } 
+          else {
+            console.log('QR Code de PIX gerado');
+          }
+        });
+
       }, (error: any) =>{
         console.log(error);
         
@@ -50,7 +59,6 @@ export class QrCodeVendaPage implements OnInit {
     }
   }
 
-
   copy(): void {
     const textField = document.createElement('textarea');
     textField.value = this.codPix;
@@ -60,4 +68,7 @@ export class QrCodeVendaPage implements OnInit {
     document.body.removeChild(textField);
   }
 
+  back(){
+    this.codPix = '';
+  }
 }

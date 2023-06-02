@@ -35,6 +35,10 @@ ion-content{
         }
     }
 
+    .mt{
+        margin-top: 20px;
+    }
+
     h1{
         margin: 0 20px;
         color: #0c6352;
@@ -116,4 +120,8 @@ ion-content{
             justify-content: space-between;
         }
     }
+}
+
+.display{
+    display: none;
 }
