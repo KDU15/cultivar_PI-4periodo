@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CadastroPage } from './cadastro.page';
+import { HttpClient } from '@angular/common/http';
 
 describe('CadastroPage', () => {
   let component: CadastroPage;
   let fixture: ComponentFixture<CadastroPage>;
 
-  beforeEach(async(() => {
+  beforeEach((() => {
     fixture = TestBed.createComponent(CadastroPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
