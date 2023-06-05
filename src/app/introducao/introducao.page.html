@@ -8,13 +8,13 @@
         <h1>Bem vindo,</h1>
         <div class="interacao">
           <span>Já é nosso parceiro?</span>
-          <ion-button routerLink="/login">
+          <ion-button (click)="goToLoginPage()">
             Sim, entrar na minha conta
           </ion-button>
         </div>
         <div class="interacao">
           <span>É sua primeira vez aqui?</span>
-          <ion-button routerLink="/cadastro">
+          <ion-button (click)="goToCadPage()">
             Vamos nessa, cadastrar-se
           </ion-button>
         </div>

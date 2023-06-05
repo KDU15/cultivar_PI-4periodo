@@ -1,11 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
 import { CadastroProdutoPage } from './cadastro-produto.page';
 
 describe('CadastroProdutoPage', () => {
   let component: CadastroProdutoPage;
   let fixture: ComponentFixture<CadastroProdutoPage>;
 
-  beforeEach((() => {
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [CadastroProdutoPage],
+      imports: [IonicModule.forRoot()]
+    }).compileComponents();
+
     fixture = TestBed.createComponent(CadastroProdutoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -13,5 +19,13 @@ describe('CadastroProdutoPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Selecionar categoria chama função setCategoria()', () => {
+    const categoria = 'grao';
+
+    component.setCategoria(categoria);
+
+    expect(component.categoria).toEqual(categoria);
   });
 });
